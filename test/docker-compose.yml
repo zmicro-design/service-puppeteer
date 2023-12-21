@@ -1,0 +1,13 @@
+services:
+  puppeteer:
+    restart: always
+    image: whatwewant/puppeteer:${SERVICE_PUPPETEER_IMAGE_VERSION}
+    environment:
+      PORT: $SERVICE_PUPPETEER_PORT
+      USERNAME: ${SERVICE_PUPPETEER_USERNAME}
+      PASSWORD: ${SERVICE_PUPPETEER_PASSWORD}
+      
+networks:
+  default:
+    external: true
+    name: compose-ingress

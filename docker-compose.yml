@@ -1,0 +1,13 @@
+services:
+  puppeteer:
+    restart: always
+    image: whatwewant/puppeteer:${SERVICE_PUPPETEER_IMAGE_VERSION}
+    # ports:
+    #   - 0.0.0.0:${SERVICE_PUPPETEER_PORT}:8080
+    environment:
+      BROWSER_WS_ENDPOINT: $SERVICE_PUPPETEER_BROWSER_WS_ENDPOINT
+      
+networks:
+  default:
+    external: true
+    name: compose-ingress
